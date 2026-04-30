@@ -1,0 +1,12 @@
+.env
+*.pyc
+__pycache__/
+db.sqlite3
+.venv/
+.venv-run/
+.venv-wsl/
+node_modules/
+dist/
+build/
+staticfiles/
+media/
