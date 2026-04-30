@@ -37,6 +37,12 @@ This repo also includes:
 - `admin/` - React admin dashboard
 - `mobile/` - Flutter mobile scaffold
 
+The web, admin, and mobile apps are wired to the Django API through `/api/v1/`.
+User-facing flows support live login/register, profile updates, platform connections,
+automation create/list/toggle/delete, reports, and subscription upgrades. Admin flows
+support live login, dashboard metrics, user suspension, automation monitoring, and
+report viewing.
+
 When Node/npm is available:
 
 ```powershell

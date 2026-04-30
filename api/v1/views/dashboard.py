@@ -2,9 +2,11 @@ from django.contrib.auth import get_user_model
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
+from api.v1.serializers import AutomationSerializer, ReportSerializer
 from apps.automation.models import Automation
 from apps.payments.models import Payment
 from apps.reports.models import Report
+from apps.subscriptions.models import Subscription
 from core.permissions.admin import IsAdminUserRole
 
 User = get_user_model()
@@ -18,6 +20,9 @@ class AdminDashboardView(APIView):
             {
                 "users": User.objects.count(),
                 "automations": Automation.objects.count(),
+                "active_automations": Automation.objects.filter(is_active=True).count(),
+                "connected_platforms": Automation.objects.exclude(connected_account=None).count(),
+                "subscriptions": Subscription.objects.count(),
                 "payments": Payment.objects.count(),
                 "reports": Report.objects.count(),
             }
@@ -41,3 +46,18 @@ class AdminUsersView(APIView):
         user.save(update_fields=["is_suspended"])
         return Response({"id": user.id, "is_suspended": user.is_suspended})
 
+
+class AdminAutomationsView(APIView):
+    permission_classes = [IsAdminUserRole]
+
+    def get(self, request):
+        automations = Automation.objects.select_related("user", "connected_account").order_by("-created_at")[:200]
+        return Response(AutomationSerializer(automations, many=True, context={"request": request}).data)
+
+
+class AdminReportsView(APIView):
+    permission_classes = [IsAdminUserRole]
+
+    def get(self, request):
+        reports = Report.objects.select_related("user").order_by("-timestamp")[:200]
+        return Response(ReportSerializer(reports, many=True).data)

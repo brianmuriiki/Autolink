@@ -4,6 +4,7 @@ import '../../features/auth/auth_screen.dart';
 import '../../features/automation/automation_screen.dart';
 import '../../features/dashboard/dashboard_screen.dart';
 import '../../features/platforms/platforms_screen.dart';
+import '../../features/profile/profile_screen.dart';
 import '../../features/reports/reports_screen.dart';
 import '../../features/subscriptions/subscription_screen.dart';
 
@@ -15,6 +16,7 @@ class AppRoutes {
   static const platforms = '/platforms';
   static const reports = '/reports';
   static const subscription = '/subscription';
+  static const profile = '/profile';
 
   static Map<String, WidgetBuilder> get routes => {
         splash: (_) => const SplashScreen(),
@@ -24,6 +26,7 @@ class AppRoutes {
         platforms: (_) => const PlatformsScreen(),
         reports: (_) => const ReportsScreen(),
         subscription: (_) => const SubscriptionScreen(),
+        profile: (_) => const ProfileScreen(),
       };
 }
 
@@ -40,4 +43,3 @@ class SplashScreen extends StatelessWidget {
     );
   }
 }
-

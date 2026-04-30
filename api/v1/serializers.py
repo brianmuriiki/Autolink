@@ -81,6 +81,11 @@ class AutomationSerializer(serializers.ModelSerializer):
         )
         read_only_fields = ("id", "last_run_at", "created_at", "updated_at")
 
+    def validate_connected_account(self, connected_account):
+        if connected_account and connected_account.user != self.context["request"].user:
+            raise serializers.ValidationError("Connected account does not belong to this user.")
+        return connected_account
+
     def create(self, validated_data):
         return Automation.objects.create(user=self.context["request"].user, **validated_data)
 
@@ -109,4 +114,3 @@ class ReportSerializer(serializers.ModelSerializer):
         model = Report
         fields = ("id", "action", "details", "timestamp")
         read_only_fields = ("id", "timestamp")
-

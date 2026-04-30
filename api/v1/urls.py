@@ -9,7 +9,7 @@ from api.v1.views.automation import (
     AutomationUpdateView,
     TemplateListCreateView,
 )
-from api.v1.views.dashboard import AdminDashboardView, AdminUsersView
+from api.v1.views.dashboard import AdminAutomationsView, AdminDashboardView, AdminReportsView, AdminUsersView
 from api.v1.views.payments import PaymentListCreateView
 from api.v1.views.platforms import PlatformConnectView, PlatformDisconnectView, PlatformListView
 from api.v1.views.reports import ReportActivityView, ReportSummaryView
@@ -40,5 +40,6 @@ urlpatterns = [
     path("admin/dashboard/", AdminDashboardView.as_view(), name="admin-dashboard"),
     path("admin/users/", AdminUsersView.as_view(), name="admin-users"),
     path("admin/users/suspend/", AdminUsersView.as_view(), name="admin-users-suspend"),
+    path("admin/automations/", AdminAutomationsView.as_view(), name="admin-automations"),
+    path("admin/reports/", AdminReportsView.as_view(), name="admin-reports"),
 ]
-

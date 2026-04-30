@@ -19,14 +19,14 @@ class AutoLinkScaffold extends StatelessWidget {
           NavigationDestination(icon: Icon(Icons.dashboard_outlined), label: 'Home'),
           NavigationDestination(icon: Icon(Icons.smart_toy_outlined), label: 'Auto'),
           NavigationDestination(icon: Icon(Icons.link_outlined), label: 'Platforms'),
-          NavigationDestination(icon: Icon(Icons.bar_chart_outlined), label: 'Reports'),
+          NavigationDestination(icon: Icon(Icons.workspace_premium_outlined), label: 'Plan'),
         ],
         onDestinationSelected: (index) {
           final routes = [
             AppRoutes.dashboard,
             AppRoutes.automation,
             AppRoutes.platforms,
-            AppRoutes.reports,
+            AppRoutes.subscription,
           ];
           Navigator.pushReplacementNamed(context, routes[index]);
         },
@@ -34,4 +34,3 @@ class AutoLinkScaffold extends StatelessWidget {
     );
   }
 }
-

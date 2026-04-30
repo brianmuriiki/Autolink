@@ -405,6 +405,33 @@ textarea {
   width: 100%;
 }
 
+.form-error {
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  color: #991b1b;
+  font-size: 0.9rem;
+  padding: 10px 12px;
+}
+
+.muted {
+  color: #64748b;
+}
+
+.row-actions {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.compact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+a.primary-button {
+  text-decoration: none;
+}
+
 @media (max-width: 980px) {
   .app-shell,
   .auth-screen,
@@ -451,4 +478,3 @@ textarea {
     grid-column: span 1;
   }
 }
-
