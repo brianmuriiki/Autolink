@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Autolink | Automation • Apps • AI • Web Development</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <!-- EmailJS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-bar">
+            <a href="#" class="logo">
+                <i class="fas fa-code"></i> Autolink
+            </a>
+            <nav>
+                <button class="theme-toggle-btn" id="themeToggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#tech">Technologies</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="badge">Future-Ready Tech Solutions</span>
+                <h1>Intelligent Automation & <span class="gradient-text">AI-Driven</span> Development</h1>
+                <p>Autolink builds future-ready applications, machine learning systems, and web platforms that transform businesses. From concept to deployment, we automate the complex.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Start Your Project <i class="fas fa-arrow-right"></i></a>
+                    <a href="#services" class="btn btn-outline">Explore Services</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat"><span class="stat-number">150+</span> Projects Delivered</div>
+                    <div class="stat"><span class="stat-number">98%</span> Client Satisfaction</div>
+                    <div class="stat"><span class="stat-number">24/7</span> Support</div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card card-1"><i class="fas fa-brain"></i> Machine Learning</div>
+                <div class="floating-card card-2"><i class="fas fa-cogs"></i> Automation</div>
+                <div class="floating-card card-3"><i class="fas fa-mobile-alt"></i> App Creation</div>
+                <div class="floating-card card-4"><i class="fas fa-globe"></i> Web Dev</div>
+                <div class="hero-circle"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Core Services</h2>
+                <p>End-to-end technology solutions tailored for the intelligent era</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="image-block">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=780&q=80" alt="Workflow automation dashboard on screen">
+                        <div class="image-caption">Automation workflow dashboard</div>
+                    </div>
+                    <h3>Intelligent Automation</h3>
+                    <p>Custom RPA, workflow automation, and business process optimization using AI to reduce costs and eliminate repetitive tasks.</p>
+                    <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="image-block">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=780&q=80" alt="Mobile app design and development in progress">
+                        <div class="image-caption">Mobile app design and development</div>
+                    </div>
+                    <h3>App Creation</h3>
+                    <p>Native iOS, Android, and cross-platform apps with seamless UX, real-time features, and scalable backend architecture.</p>
+                    <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="image-block">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=780&q=80" alt="Web development code and design workflow">
+                        <div class="image-caption">Web development coding workflow</div>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Modern responsive websites, progressive web apps, and enterprise portals built with React, Node.js, and cloud-native tools.</p>
+                    <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="image-block">
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=780&q=80" alt="Data scientist reviewing machine learning models">
+                        <div class="image-caption">Machine learning model review</div>
+                    </div>
+                    <h3>Machine Learning & AI</h3>
+                    <p>Predictive models, NLP, computer vision, and generative AI solutions that unlock data-driven insights and automation.</p>
+                    <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="image-block">
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=780&q=80" alt="Cloud infrastructure and DevOps dashboard">
+                        <div class="image-caption">Cloud infrastructure and DevOps</div>
+                    </div>
+                    <h3>Cloud & DevOps</h3>
+                    <p>AWS, Azure, GCP infrastructure, CI/CD pipelines, and containerization to ensure your apps scale reliably.</p>
+                    <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="service-card">
+                    <div class="image-block">
+                        <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=780&q=80" alt="Analytics dashboard with charts and reports">
+                        <div class="image-caption">Analytics dashboards for insight</div>
+                    </div>
+                    <h3>Data Analytics</h3>
+                    <p>Turn raw data into actionable dashboards and reports with our data engineering and visualization expertise.</p>
+                    <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="tech" class="tech">
+        <div class="container">
+            <div class="section-header">
+                <h2>Technologies We Master</h2>
+                <p>Cutting-edge tools and frameworks powering our solutions</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-item"><i class="fab fa-html5"></i> HTML</div>
+                <div class="tech-item"><i class="fab fa-css3-alt"></i> CSS</div>
+                <div class="tech-item"><i class="fas fa-code"></i> C</div>
+                <div class="tech-item"><i class="fas fa-code"></i> C++</div>
+                <div class="tech-item"><i class="fas fa-code"></i> C#</div>
+                <div class="tech-item"><i class="fab fa-python"></i> Python</div>
+                <div class="tech-item"><i class="fab fa-js"></i> JavaScript / TypeScript</div>
+                <div class="tech-item"><i class="fab fa-java"></i> Java</div>
+                <div class="tech-item"><i class="fas fa-database"></i> SQL</div>
+                <div class="tech-item"><i class="fab fa-php"></i> PHP</div>
+                <div class="tech-item"><i class="fab fa-docker"></i> Docker</div>
+                <div class="tech-item"><i class="fas fa-cloud"></i> Cloud Platforms</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p>Real-world success stories from our portfolio</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img image-block">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="Smart factory automation dashboard">
+                        <div class="image-caption">Factory intelligence and predictive analytics</div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Automation</span>
+                        <h3>Smart Factory Workflow</h3>
+                        <p>AI-powered predictive maintenance and automated inventory system reducing downtime by 40%.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img image-block">
+                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" alt="Medical AI health diagnosis screen">
+                        <div class="image-caption">Medical AI diagnosis interface</div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">AI / ML</span>
+                        <h3>Health Diagnosis Assistant</h3>
+                        <p>Computer vision model for early detection with 95% accuracy, deployed in 12 clinics.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img image-block">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="E-commerce analytics and product pages">
+                        <div class="image-caption">E-commerce analytics and shopping experience</div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-tag">Web & App</span>
+                        <h3>E-Commerce Platform</h3>
+                        <p>Full-stack marketplace with real-time analytics, handling 500k+ monthly users.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container about-content">
+            <div class="about-text">
+                <h2>About Autolink</h2>
+                <p class="lead">We are engineers, data scientists, and creators passionate about building technology that matters.</p>
+                <p>Founded in 2019, Autolink has grown into a trusted partner for startups and enterprises worldwide. Our mission is to bridge the gap between ambitious ideas and robust, scalable implementations using automation, AI, and modern development practices.</p>
+                <div class="about-values">
+                    <div><i class="fas fa-check-circle"></i> Innovation First</div>
+                    <div><i class="fas fa-check-circle"></i> Agile Delivery</div>
+                    <div><i class="fas fa-check-circle"></i> Transparent Process</div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="about-card">
+                    <i class="fas fa-users"></i>
+                    <span>50+ Experts</span>
+                </div>
+                <div class="about-card">
+                    <i class="fas fa-globe-americas"></i>
+                    <span>20+ Countries</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Let's Build Together</h2>
+                <p>Have a project in mind? We'll help you automate, innovate, and scale.</p>
+            </div>
+            <div class="contact-wrapper">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="service">
+                            <option value="">Select Service</option>
+                            <option>Automation</option>
+                            <option>App Creation</option>
+                            <option>Web Development</option>
+                            <option>Machine Learning / AI</option>
+                            <option>Cloud & DevOps</option>
+                            <option>Data Analytics</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+                        <span class="btn-text">Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                    <div id="formFeedback" class="form-feedback"></div>
+                </form>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div><strong>Email</strong>shadowhachtech@gmail.com</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div><strong>Phone</strong>0758643068</div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div><strong>Office</strong>Nairobi, Kenya</div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#https://linkedin.com/in/brianmuriiki" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#https://github.com/brianmuriiki" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#https://x.com/brianmuriiki" title="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo"><i class="fas fa-code"></i> Autolink</div>
+            <p>© 2025 Autolink Technologies. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Careers</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
