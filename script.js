@@ -16,28 +16,8 @@ if (hamburger && navLinks) {
     });
 }
 
-const themeToggle = document.getElementById('themeToggle');
-const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
-
-const savedTheme = localStorage.getItem('theme');
-const preferredDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-setTheme(savedTheme || (preferredDark ? 'dark' : 'light'));
-
-if (themeToggle) {
-    themeToggle.addEventListener('click', () => {
-        const newTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
-        setTheme(newTheme);
-    });
-}
-
-function setTheme(theme) {
-    const isDark = theme === 'dark';
-    document.body.classList.toggle('dark-mode', isDark);
-    if (themeIcon) {
-        themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
-    }
-    localStorage.setItem('theme', theme);
-}
+// Apply dark mode by default
+document.body.classList.add('dark-mode');
 
 // Close mobile menu when clicking links
 if (hamburger && navLinks) {
