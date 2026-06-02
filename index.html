@@ -9,6 +9,7 @@
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
     <meta name="revisit-after" content="7 days">
+    <meta name="theme-color" content="#0f62fe">
     <link rel="canonical" href="https://autolink-company.vercel.app/">
     <title>Autolink Tech | Automation • Apps • AI • Web Development</title>
     
@@ -17,19 +18,27 @@
     <meta property="og:description" content="Transform your business with intelligent automation, AI systems, and cutting-edge web applications.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://autolink-company.vercel.app/">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80">
     <meta property="og:locale" content="en_US">
     
     <!-- Twitter Card Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Autolink Tech | AI-Driven Automation & Development">
     <meta name="twitter:description" content="Transform your business with intelligent automation, AI systems, and cutting-edge web applications.">
-    <meta name="twitter:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://images.unsplash.com">
+    
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
-    
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
@@ -56,13 +65,14 @@
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
+    
     <!-- Header & Navigation -->
-    <header>
+    <header role="banner">
         <div class="container nav-bar">
             <a href="#home" class="logo">
                 <i class="fas fa-code"></i> Autolink Tech
             </a>
-            <nav>
+            <nav role="navigation" aria-label="Main navigation">
                 <ul class="nav-links" id="navLinks">
                     <li><a href="#home" class="active">Home</a></li>
                     <li><a href="#services">Services</a></li>
@@ -79,9 +89,11 @@
                 </button>
             </nav>
         </div>
+        <!-- Mobile menu overlay -->
+        <div class="nav-overlay" id="navOverlay"></div>
     </header>
 
-    <main id="main">
+    <main id="main" role="main">
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="container hero-content">
@@ -117,18 +129,18 @@
                 <p>End-to-end technology solutions tailored for the intelligent era</p>
             </div>
             <div class="services-grid">
-                <div class="service-card">
+                <article class="service-card reveal">
                     <div class="image-block service-visual">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=780&q=80" alt="Workflow automation dashboard on screen">
-                        <div class="service-art automation-art" aria-hidden="true">
-                            <i class="fas fa-robot service-art-icon"></i>
-                            <span class="node node-a"></span>
-                            <span class="node node-b"></span>
-                            <span class="node node-c"></span>
-                            <span class="line line-a"></span>
-                            <span class="line line-b"></span>
-                        </div>
-                        <div class="service-metric">40% less manual work</div>
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=780&q=80" 
+                             srcset="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=60 400w,
+                                     https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=70 600w,
+                                     https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=780&q=80 780w"
+                             sizes="(max-width: 480px) 400px, (max-width: 768px) 600px, 780px"
+                             alt="Workflow automation dashboard on screen"
+                             loading="lazy"
+                             decoding="async"
+                             width="780"
+                             height="220">
                         <div class="image-caption">Automation workflow dashboard</div>
                     </div>
                     <h3>Intelligent Automation</h3>
@@ -139,18 +151,19 @@
                         <span>Integrations</span>
                     </div>
                     <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
+                </article>
+                <article class="service-card reveal">
                     <div class="image-block service-visual">
-                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=780&q=80" alt="Mobile app design and development in progress">
-                        <div class="service-art app-art" aria-hidden="true">
-                            <i class="fas fa-mobile-alt service-art-icon"></i>
-                            <span class="phone-screen"></span>
-                            <span class="app-dot dot-a"></span>
-                            <span class="app-dot dot-b"></span>
-                            <span class="app-dot dot-c"></span>
-                        </div>
-                        <div class="service-metric">iOS + Android ready</div>
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=780&q=80" 
+                             srcset="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=60 400w,
+                                     https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=600&q=70 600w,
+                                     https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=780&q=80 780w"
+                             sizes="(max-width: 480px) 400px, (max-width: 768px) 600px, 780px"
+                             alt="Mobile app design and development in progress"
+                             loading="lazy"
+                             decoding="async"
+                             width="780"
+                             height="220">
                         <div class="image-caption">Mobile app design and development</div>
                     </div>
                     <h3>App Creation</h3>
@@ -161,18 +174,19 @@
                         <span>APIs</span>
                     </div>
                     <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
+                </article>
+                <article class="service-card reveal">
                     <div class="image-block service-visual">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=780&q=80" alt="Web development code and design workflow">
-                        <div class="service-art web-art" aria-hidden="true">
-                            <i class="fas fa-laptop-code service-art-icon"></i>
-                            <span class="browser-bar"></span>
-                            <span class="code-line line-one"></span>
-                            <span class="code-line line-two"></span>
-                            <span class="code-line line-three"></span>
-                        </div>
-                        <div class="service-metric">Fast, responsive builds</div>
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=780&q=80" 
+                             srcset="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=60 400w,
+                                     https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=70 600w,
+                                     https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=780&q=80 780w"
+                             sizes="(max-width: 480px) 400px, (max-width: 768px) 600px, 780px"
+                             alt="Web development code and design workflow"
+                             loading="lazy"
+                             decoding="async"
+                             width="780"
+                             height="220">
                         <div class="image-caption">Web development coding workflow</div>
                     </div>
                     <h3>Web Development</h3>
@@ -183,18 +197,19 @@
                         <span>SEO</span>
                     </div>
                     <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
+                </article>
+                <article class="service-card reveal">
                     <div class="image-block service-visual">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=780&q=80" alt="Data scientist reviewing machine learning models">
-                        <div class="service-art ai-art" aria-hidden="true">
-                            <i class="fas fa-brain service-art-icon"></i>
-                            <span class="pulse-ring ring-one"></span>
-                            <span class="pulse-ring ring-two"></span>
-                            <span class="spark spark-a"></span>
-                            <span class="spark spark-b"></span>
-                        </div>
-                        <div class="service-metric">Models that learn</div>
+                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=780&q=80" 
+                             srcset="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=60 400w,
+                                     https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=600&q=70 600w,
+                                     https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=780&q=80 780w"
+                             sizes="(max-width: 480px) 400px, (max-width: 768px) 600px, 780px"
+                             alt="Data scientist reviewing machine learning models"
+                             loading="lazy"
+                             decoding="async"
+                             width="780"
+                             height="220">
                         <div class="image-caption">Machine learning model review</div>
                     </div>
                     <h3>Machine Learning & AI</h3>
@@ -205,18 +220,19 @@
                         <span>Agents</span>
                     </div>
                     <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
+                </article>
+                <article class="service-card reveal">
                     <div class="image-block service-visual">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=780&q=80" alt="Cloud infrastructure and DevOps dashboard">
-                        <div class="service-art cloud-art" aria-hidden="true">
-                            <i class="fas fa-cloud service-art-icon"></i>
-                            <span class="deploy-box box-a"></span>
-                            <span class="deploy-box box-b"></span>
-                            <span class="deploy-box box-c"></span>
-                            <span class="deploy-line"></span>
-                        </div>
-                        <div class="service-metric">Scalable deployments</div>
+                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=780&q=80" 
+                             srcset="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=60 400w,
+                                     https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=70 600w,
+                                     https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=780&q=80 780w"
+                             sizes="(max-width: 480px) 400px, (max-width: 768px) 600px, 780px"
+                             alt="Cloud infrastructure and DevOps dashboard"
+                             loading="lazy"
+                             decoding="async"
+                             width="780"
+                             height="220">
                         <div class="image-caption">Cloud infrastructure and DevOps</div>
                     </div>
                     <h3>Cloud & DevOps</h3>
@@ -227,18 +243,19 @@
                         <span>Cloud</span>
                     </div>
                     <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
+                </article>
+                <article class="service-card reveal">
                     <div class="image-block service-visual">
-                        <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=780&q=80" alt="Analytics dashboard with charts and reports">
-                        <div class="service-art data-art" aria-hidden="true">
-                            <i class="fas fa-chart-line service-art-icon"></i>
-                            <span class="bar bar-a"></span>
-                            <span class="bar bar-b"></span>
-                            <span class="bar bar-c"></span>
-                            <span class="bar bar-d"></span>
-                        </div>
-                        <div class="service-metric">Clearer decisions</div>
+                        <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=780&q=80" 
+                             srcset="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=400&q=60 400w,
+                                     https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=600&q=70 600w,
+                                     https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=780&q=80 780w"
+                             sizes="(max-width: 480px) 400px, (max-width: 768px) 600px, 780px"
+                             alt="Analytics dashboard with charts and reports"
+                             loading="lazy"
+                             decoding="async"
+                             width="780"
+                             height="220">
                         <div class="image-caption">Analytics dashboards for insight</div>
                     </div>
                     <h3>Data Analytics</h3>
@@ -249,7 +266,7 @@
                         <span>Pipelines</span>
                     </div>
                     <a href="#contact" class="learn-more">Get Started <i class="fas fa-arrow-right"></i></a>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -262,22 +279,22 @@
                 <p>A clear path from idea to launch, with momentum at every step</p>
             </div>
             <div class="process-grid">
-                <div class="process-step">
+                <div class="process-step reveal">
                     <span>01</span>
                     <h3>Discover</h3>
                     <p>We clarify your goals, users, workflows, technical constraints, and success metrics.</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step reveal">
                     <span>02</span>
                     <h3>Design</h3>
                     <p>We map the architecture, user experience, automation logic, and delivery roadmap.</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step reveal">
                     <span>03</span>
                     <h3>Build</h3>
                     <p>We develop in focused sprints with frequent demos, testing, and practical feedback loops.</p>
                 </div>
-                <div class="process-step">
+                <div class="process-step reveal">
                     <span>04</span>
                     <h3>Launch</h3>
                     <p>We deploy, monitor, document, and support your team as the product goes live.</p>
@@ -294,18 +311,18 @@
                 <p>Cutting-edge tools and frameworks powering our solutions</p>
             </div>
             <div class="tech-grid">
-                <div class="tech-item"><i class="fab fa-html5"></i> HTML</div>
-                <div class="tech-item"><i class="fab fa-css3-alt"></i> CSS</div>
-                <div class="tech-item"><i class="fas fa-code"></i> C</div>
-                <div class="tech-item"><i class="fas fa-code"></i> C++</div>
-                <div class="tech-item"><i class="fas fa-code"></i> C#</div>
-                <div class="tech-item"><i class="fab fa-python"></i> Python</div>
-                <div class="tech-item"><i class="fab fa-js"></i> JavaScript / TypeScript</div>
-                <div class="tech-item"><i class="fab fa-java"></i> Java</div>
-                <div class="tech-item"><i class="fas fa-database"></i> SQL</div>
-                <div class="tech-item"><i class="fab fa-php"></i> PHP</div>
-                <div class="tech-item"><i class="fab fa-docker"></i> Docker</div>
-                <div class="tech-item"><i class="fas fa-cloud"></i> Cloud Platforms</div>
+                <div class="tech-item reveal"><i class="fab fa-html5"></i> HTML</div>
+                <div class="tech-item reveal"><i class="fab fa-css3-alt"></i> CSS</div>
+                <div class="tech-item reveal"><i class="fas fa-code"></i> C</div>
+                <div class="tech-item reveal"><i class="fas fa-code"></i> C++</div>
+                <div class="tech-item reveal"><i class="fas fa-code"></i> C#</div>
+                <div class="tech-item reveal"><i class="fab fa-python"></i> Python</div>
+                <div class="tech-item reveal"><i class="fab fa-js"></i> JavaScript / TypeScript</div>
+                <div class="tech-item reveal"><i class="fab fa-java"></i> Java</div>
+                <div class="tech-item reveal"><i class="fas fa-database"></i> SQL</div>
+                <div class="tech-item reveal"><i class="fab fa-php"></i> PHP</div>
+                <div class="tech-item reveal"><i class="fab fa-docker"></i> Docker</div>
+                <div class="tech-item reveal"><i class="fas fa-cloud"></i> Cloud Platforms</div>
             </div>
         </div>
     </section>
@@ -318,9 +335,18 @@
                 <p>Real-world success stories from our portfolio</p>
             </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <article class="project-card reveal">
                     <div class="project-img image-block">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" alt="Smart factory automation dashboard">
+                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80" 
+                             srcset="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=400&q=60 400w,
+                                     https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=70 600w,
+                                     https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=900&q=80 900w"
+                             sizes="(max-width: 480px) 400px, (max-width: 768px) 600px, 900px"
+                             alt="Smart factory automation dashboard"
+                             loading="lazy"
+                             decoding="async"
+                             width="900"
+                             height="180">
                         <div class="image-caption">Factory intelligence and predictive analytics</div>
                     </div>
                     <div class="project-info">
@@ -328,10 +354,19 @@
                         <h3>Smart Factory Workflow</h3>
                         <p>AI-powered predictive maintenance and automated inventory system reducing downtime by 40%.</p>
                     </div>
-                </div>
-                <div class="project-card">
+                </article>
+                <article class="project-card reveal">
                     <div class="project-img image-block">
-                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" alt="Medical AI health diagnosis screen">
+                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" 
+                             srcset="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=60 400w,
+                                     https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=600&q=70 600w,
+                                     https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80 900w"
+                             sizes="(max-width: 480px) 400px, (max-width: 768px) 600px, 900px"
+                             alt="Medical AI health diagnosis screen"
+                             loading="lazy"
+                             decoding="async"
+                             width="900"
+                             height="180">
                         <div class="image-caption">Medical AI diagnosis interface</div>
                     </div>
                     <div class="project-info">
@@ -339,10 +374,19 @@
                         <h3>Health Diagnosis Assistant</h3>
                         <p>Computer vision model for early detection with 95% accuracy, deployed in 12 clinics.</p>
                     </div>
-                </div>
-                <div class="project-card">
+                </article>
+                <article class="project-card reveal">
                     <div class="project-img image-block">
-                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="E-commerce analytics and product pages">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" 
+                             srcset="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=60 400w,
+                                     https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=70 600w,
+                                     https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80 900w"
+                             sizes="(max-width: 480px) 400px, (max-width: 768px) 600px, 900px"
+                             alt="E-commerce analytics and product pages"
+                             loading="lazy"
+                             decoding="async"
+                             width="900"
+                             height="180">
                         <div class="image-caption">E-commerce analytics and shopping experience</div>
                     </div>
                     <div class="project-info">
@@ -350,7 +394,7 @@
                         <h3>E-Commerce Platform</h3>
                         <p>Full-stack marketplace with real-time analytics, handling 500k+ monthly users.</p>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
@@ -363,19 +407,19 @@
                 <p>Practical technology work measured by business results</p>
             </div>
             <div class="testimonial-grid">
-                <article class="testimonial-card">
+                <article class="testimonial-card reveal">
                     <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
                     <p>Autolink Tech helped us replace manual reporting with a dashboard our operations team now uses every morning.</p>
                     <strong>Operations Lead</strong>
                     <span>Logistics Company</span>
                 </article>
-                <article class="testimonial-card">
+                <article class="testimonial-card reveal">
                     <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
                     <p>Their team moved fast, explained tradeoffs clearly, and shipped an app that our customers actually enjoy using.</p>
                     <strong>Founder</strong>
                     <span>Service Marketplace</span>
                 </article>
-                <article class="testimonial-card">
+                <article class="testimonial-card reveal">
                     <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
                     <p>We came in with a messy workflow. They turned it into a reliable automation pipeline with room to scale.</p>
                     <strong>Managing Director</strong>
@@ -447,38 +491,38 @@
                 <p>Have a project in mind? We'll help you automate, innovate, and scale.</p>
             </div>
             <div class="contact-wrapper">
-                <div data-fs-success class="form-feedback success" style="display: none;">Thank you. Your message has been sent successfully. We'll get back to you within 24 hours.</div>
-                <div data-fs-error class="form-feedback error" style="display: none;"></div>
-
-                <form id="contactForm" class="contact-form" action="https://formspree.io/f/mgoqqqql" method="POST">
+                <form id="contactForm" class="contact-form" action="https://formspree.io/f/mgoqqqql" method="POST" novalidate>
                     <input type="hidden" name="_subject" value="New Autolink Tech project inquiry">
                     <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" data-fs-field required>
-                        <span data-fs-error="name" class="field-error"></span>
+                        <label for="name">Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required aria-required="true" aria-invalid="false" autocomplete="name" minlength="2">
+                        <span class="field-error" role="alert" aria-live="polite"></span>
                     </div>
                     <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" data-fs-field required>
-                        <span data-fs-error="email" class="field-error"></span>
+                        <label for="email">Email <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required aria-required="true" aria-invalid="false" autocomplete="email">
+                        <span class="field-error" role="alert" aria-live="polite"></span>
                     </div>
                     <div class="form-group">
                         <label for="phone">Phone</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Your Phone (optional)" data-fs-field>
-                        <span data-fs-error="phone" class="field-error"></span>
+                        <input type="tel" id="phone" name="phone" placeholder="Your Phone (optional)" aria-invalid="false" autocomplete="tel">
+                        <span class="field-error" role="alert" aria-live="polite"></span>
                     </div>
                     <div class="form-group">
-                        <label for="service">Service</label>
-                        <input type="text" id="service" name="service" placeholder="Service you need" data-fs-field required>
-                        <span data-fs-error="service" class="field-error"></span>
+                        <label for="service">Service <span class="required">*</span></label>
+                        <input type="text" id="service" name="service" placeholder="Service you need" required aria-required="true" aria-invalid="false">
+                        <span class="field-error" role="alert" aria-live="polite"></span>
                     </div>
                     <div class="form-group">
-                        <label for="message">Project details</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." data-fs-field required></textarea>
-                        <span data-fs-error="message" class="field-error"></span>
+                        <label for="message">Project details <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project..." required aria-required="true" aria-invalid="false" minlength="10"></textarea>
+                        <span class="field-error" role="alert" aria-live="polite"></span>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-full" id="submitBtn" data-fs-submit-btn>
+                    <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
                         <span class="btn-text">Send Message <i class="fas fa-paper-plane"></i></span>
+                        <span class="btn-loading" style="display:none;">
+                            <span class="spinner"></span> Sending...
+                        </span>
                     </button>
                 </form>
                 <div class="contact-info">
@@ -506,7 +550,7 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container footer-content">
             <div class="footer-logo"><i class="fas fa-code"></i> Autolink Tech</div>
             <p>© 2026 Autolink Tech. All rights reserved.</p>
