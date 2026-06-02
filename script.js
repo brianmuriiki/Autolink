@@ -1,7 +1,6 @@
-// Initialize EmailJS with your public key if available
-if (window.emailjs && typeof emailjs.init === 'function') {
-    emailjs.init('iDQQgCq8jlQ2Axu_q');
-}
+// Initialize Formspree
+window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+formspree('initForm', { formElement: '#contactForm', formId: 'mgoqqqql' });
 
 // Mobile menu toggle with animation
 const hamburger = document.getElementById('hamburger');
@@ -12,7 +11,10 @@ if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
         navLinks.classList.toggle('active');
-        body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+        const isOpen = navLinks.classList.contains('active');
+        hamburger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        hamburger.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+        body.style.overflow = isOpen ? 'hidden' : '';
     });
 }
 
@@ -25,6 +27,8 @@ if (hamburger && navLinks) {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             navLinks.classList.remove('active');
+            hamburger.setAttribute('aria-expanded', 'false');
+            hamburger.setAttribute('aria-label', 'Open navigation menu');
             body.style.overflow = '';
         });
     });
@@ -74,98 +78,7 @@ const observer = new IntersectionObserver((entries) => {
 
 sections.forEach(section => observer.observe(section));
 
-// Contact form submission with EmailJS
-const contactForm = document.getElementById('contactForm');
-const formFeedback = document.getElementById('formFeedback');
-const submitBtn = document.getElementById('submitBtn');
-const btnText = submitBtn ? submitBtn.querySelector('.btn-text') : null;
 
-if (contactForm && formFeedback && submitBtn && btnText) {
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const service = document.getElementById('service').value;
-        const message = document.getElementById('message').value.trim();
-        
-        // Basic validation
-        if (!name || !email || !message) {
-            showFeedback('⚠️ Please fill in all required fields.', 'error');
-            return;
-        }
-        
-        if (!isValidEmail(email)) {
-            showFeedback('⚠️ Please enter a valid email address.', 'error');
-            return;
-        }
-        
-        // Show loading state
-        setLoading(true);
-        
-        // Prepare template parameters for EmailJS
-        const templateParams = {
-            from_name: name,
-            from_email: email,
-            service: service || 'Not specified',
-            message: message,
-            to_email: 'shadowhachtech@gmail.com'
-        };
-        
-        try {
-            // Send email using EmailJS with your credentials if available
-            if (window.emailjs && typeof emailjs.send === 'function') {
-                const response = await emailjs.send(
-                    'service_9596a95',        // Your EmailJS service ID
-                    'template_ovexsps',        // Your EmailJS template ID
-                    templateParams,
-                    'iDQQgCq8jlQ2Axu_q'       // Your EmailJS public key
-                );
-                console.log('Email sent successfully!', response);
-                showFeedback('✅ Thank you! Your message has been sent to shadowhachtech@gmail.com. We\'ll get back to you within 24 hours.', 'success');
-                contactForm.reset();
-            } else {
-                showFeedback('⚠️ Email service is not available right now. Please email us directly at shadowhachtech@gmail.com', 'error');
-            }
-        } catch (error) {
-            console.error('Email sending failed:', error);
-            showFeedback('❌ Failed to send message. Please try again or email us directly at shadowhachtech@gmail.com', 'error');
-        } finally {
-            setLoading(false);
-        }
-    });
-}
-
-function showFeedback(message, type) {
-    if (!formFeedback) return;
-    formFeedback.textContent = message;
-    formFeedback.className = `form-feedback ${type}`;
-    
-    // Clear feedback after 8 seconds
-    setTimeout(() => {
-        if (!formFeedback) return;
-        if (formFeedback.textContent === message) {
-            formFeedback.textContent = '';
-            formFeedback.className = 'form-feedback';
-        }
-    }, 8000);
-}
-
-function setLoading(isLoading) {
-    if (!submitBtn || !btnText) return;
-    if (isLoading) {
-        submitBtn.disabled = true;
-        btnText.innerHTML = '<span class="spinner"></span> Sending...';
-    } else {
-        submitBtn.disabled = false;
-        btnText.innerHTML = 'Send Message <i class="fas fa-paper-plane"></i>';
-    }
-}
-
-function isValidEmail(email) {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-}
 
 // Add subtle parallax effect to hero visual on mouse move
 const heroVisual = document.querySelector('.hero-visual');
@@ -197,7 +110,7 @@ const observerReveal = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.service-card, .project-card, .tech-item').forEach(el => {
+document.querySelectorAll('.service-card, .project-card, .process-step, .testimonial-card, .tech-item, .faq-list details').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
     el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
